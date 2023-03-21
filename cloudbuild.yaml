@@ -19,13 +19,6 @@ steps:
   #   args:
   #     - skaffold
   #     - dev
-  - name: 'bash'
-    entrypoint: "sudo"
-    args: ["apt-get","update"]
-
-  - name: 'bash'
-    entrypoint: "sudo"
-    args: ["apt-get","-only-upgrade","install","google-cloud-sdk"]
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
