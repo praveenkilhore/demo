@@ -1,6 +1,9 @@
 apiVersion: skaffold/v2beta12
 kind: Config
 build:
+  tagPolicy:
+    envTemplate:
+      template: "{{.TAGNAME}}"
   artifacts:
   - image: us-central1-docker.pkg.dev/practice-379412/practice/demo
     docker:
