@@ -3,22 +3,22 @@ steps:
     entrypoint: mvn
     args: ["package"]
     
-  # - name: gcr.io/cloud-builders/docker
-  #   args: [
-  #           "build", 
-  #           "-t", 
-  #           "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1",
-  #           "."]
+  - name: gcr.io/cloud-builders/docker
+    args: [
+            "build", 
+            "-t", 
+            "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1",
+            "."]
 
-  # - name: gcr.io/cloud-builders/docker
-  #   args: [
-  #           "push",
-  #           "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
+  - name: gcr.io/cloud-builders/docker
+    args: [
+            "push",
+            "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
   
-  - name: gcr.io/k8s-skaffold/skaffold
-    args:
-      - skaffold
-      - dev
+  # - name: gcr.io/k8s-skaffold/skaffold
+  #   args:
+  #     - skaffold
+  #     - dev
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
@@ -26,5 +26,6 @@ steps:
            "apply",
            "--file", "clouddeploy.yaml",
            "--region", "us-central1",
-           "--project", "practice-379412"
+           "--project", "practice-379412",
+           "--skaffold-file", "skaffold.yaml"
            ]
