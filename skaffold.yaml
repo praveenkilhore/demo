@@ -11,4 +11,4 @@ deploy:
     - name: helloworld
       chartPath: demochart
       valuesFiles:
-        - ./demo/demochart/values.yaml
+        - demochart/values.yaml
