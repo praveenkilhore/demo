@@ -15,7 +15,8 @@ steps:
             "push",
             "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
 
-  - name: gcr.io/cloud-builders/gcloud
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
     args: ["deploy",
            "apply",
            "--file=./clouddeploy.yaml",
