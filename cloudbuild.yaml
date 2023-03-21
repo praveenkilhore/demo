@@ -20,15 +20,23 @@ steps:
   #     - skaffold
   #     - dev
 
-  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: gcloud
-    args: [
-      "deploy",
-      "apply",
-      "--file","clouddeploy.yaml",
-      "--region","us-central1",
-      "--project","practice-379412"
-    ]
+  - name: "gcr.io/cloud-builders/gcloud"
+    args: 
+      - deploy
+      - apply
+      - --file=clouddeploy.yaml
+      - --region=us-central1
+      - --project=practice-379412
+
+  # - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+  #   entrypoint: gcloud
+  #   args: [
+  #     "deploy",
+  #     "apply",
+  #     "--file","clouddeploy.yaml",
+  #     "--region","us-central1",
+  #     "--project","practice-379412"
+  #   ]
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
