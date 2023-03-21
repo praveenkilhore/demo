@@ -19,11 +19,11 @@ steps:
   #   args:
   #     - skaffold
   #     - dev
-  - name: "sudo"
+  - name: 'bash'
     entrypoint: "sudo"
     args: ["apt-get","update"]
 
-  - name: "sudo1"
+  - name: 'bash'
     entrypoint: "sudo"
     args: ["apt-get","-only-upgrade","install","google-cloud-sdk"]
 
