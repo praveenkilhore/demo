@@ -23,6 +23,12 @@ steps:
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args: 
+      - components
+      - update
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args: 
       - deploy
       - apply
       - --file=clouddeploy.yaml
