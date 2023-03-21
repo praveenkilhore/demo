@@ -1,5 +1,15 @@
 apiVersion: skaffold/v2beta12
 kind: Config
+build:
+  artifacts:
+  - image: us-central1-docker.pkg.dev/practice-379412/practice/demo:v1
+    docker:
+      cacheFrom:
+      # googleCloudBuild replaces cache references to the artifact image with
+      # the tagged image reference, useful for caching from the previous build.
+      - us-central1-docker.pkg.dev/practice-379412/practice/demo:v1
+  googleCloudBuild:
+    projectId: practice-379412
 deploy:
   helm:
     releases:

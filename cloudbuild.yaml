@@ -14,12 +14,17 @@ steps:
     args: [
             "push",
             "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
+  
+  - name: gcr.io/k8s-skaffold/skaffold
+    args:
+      - skaffold
+      - init
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
     args: ["deploy",
            "apply",
-           "--file=clouddeploy.yaml",
-           "--region=us-central1",
-           "--project=practice-379412"
+           "--file", "clouddeploy.yaml",
+           "--region", "us-central1",
+           "--project", "practice-379412"
            ]
