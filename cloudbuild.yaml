@@ -20,7 +20,8 @@ steps:
   #     - skaffold
   #     - dev
 
-  - name: "gcr.io/cloud-builders/gcloud"
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
     args: 
       - deploy
       - apply
