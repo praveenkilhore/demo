@@ -9,6 +9,6 @@ deploy:
   helm:
     releases:
     - name: helloworld
-      chartPath: ./demo/demochart
+      chartPath: demochart
       valuesFiles:
         - ./demo/demochart/values.yaml
