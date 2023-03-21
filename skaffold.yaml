@@ -1,0 +1,9 @@
+apiVersion: skaffold/v2beta12
+kind: Config
+deploy:
+  helm:
+    releases:
+    - name: helloworld
+      chartPath: ./demo/demochart
+      valuesFiles:
+        - ./demo/demochart/values.yaml
