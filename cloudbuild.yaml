@@ -1,0 +1,27 @@
+steps:
+  - name: maven
+    entrypoint: mvn
+    args: ["install"]
+    
+  - name: gcr.io/cloud-builders/docker
+    args: [
+            "build", 
+            "-t", 
+            "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1",
+            "."]
+
+  - name: gcr.io/cloud-builders/docker
+    args: [
+            "push",
+            "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
+
+  - name: gcr.io/cloud-builders/gcloud
+    args: ["deploy",
+           "apply",
+           "--file=./clouddeploy.yaml",
+           "--region=$LOCATION",
+           "--project=$PROEJCT_ID"
+           ]
+    env:
+      - "PROJECT_ID=practice-379412"
+      - "LOCATION=us-central1"

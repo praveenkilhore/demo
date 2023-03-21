@@ -1,7 +1,7 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
- name: my-gke-demo-app-1
+ name: demo-app
 description: Use case demo pipeline
 serialPipeline:
  stages:
@@ -13,7 +13,7 @@ apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
  name: dev
-description: development cluster
+description: demo practice
 gke:
- cluster: projects/PROJECT_ID/locations/us-central1/clusters/dev
+ cluster: projects/practice-379412/locations/us-central1-c/clusters/cluster-1
 ---
