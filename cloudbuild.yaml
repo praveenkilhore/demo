@@ -3,23 +3,22 @@ steps:
     entrypoint: mvn
     args: ["install"]
     
-  - name: gcr.io/cloud-builders/docker
-    args: [
-            "build", 
-            "-t", 
-            "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1",
-            "."]
+  # - name: gcr.io/cloud-builders/docker
+  #   args: [
+  #           "build", 
+  #           "-t", 
+  #           "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1",
+  #           "."]
 
-  - name: gcr.io/cloud-builders/docker
-    args: [
-            "push",
-            "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
+  # - name: gcr.io/cloud-builders/docker
+  #   args: [
+  #           "push",
+  #           "us-central1-docker.pkg.dev/practice-379412/practice/demo:v1"]
   
   - name: gcr.io/k8s-skaffold/skaffold
     args:
       - skaffold
-      - init
-      - --force
+      - dev
 
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
