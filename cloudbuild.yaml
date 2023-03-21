@@ -19,9 +19,6 @@ steps:
     args: ["deploy",
            "apply",
            "--file=./clouddeploy.yaml",
-           "--region=$LOCATION",
-           "--project=$PROEJCT_ID"
+           "--region=us-central1",
+           "--project=practice-379412"
            ]
-    env:
-      - "PROJECT_ID=practice-379412"
-      - "LOCATION=us-central1"
