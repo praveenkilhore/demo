@@ -5,15 +5,14 @@ metadata:
 description: Use case demo pipeline
 serialPipeline:
  stages:
- - targetId: dev1
+ - targetId: dev
    profiles: []
 ---
 
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
- name: dev1
+ name: dev
 description: demo practice
 gke:
- cluster: projects/practice-379412/locations/us-central1-c/clusters/dev1
----
+ cluster: projects/practice-379412/locations/us-central1-c/clusters/dev
