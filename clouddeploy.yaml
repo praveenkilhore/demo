@@ -16,8 +16,8 @@ metadata:
 description: demo practice
 gke:
  cluster: projects/practice-379412/locations/us-central1-c/clusters/dev
-executionConfigs:
-- usages:
-  - RENDER
-  - DEPLOY
-  serviceAccount: 358472389881-compute@developer.gserviceaccount.com
+# executionConfigs:
+# - usages:
+#   - RENDER
+#   - DEPLOY
+#   serviceAccount: 358472389881-compute@developer.gserviceaccount.com
